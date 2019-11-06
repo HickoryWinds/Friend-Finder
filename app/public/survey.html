@@ -168,7 +168,7 @@
   <!-- container for links -->
   <div class='container'>
     <a href='/api/friends' target='blank'>API Friends List | </a>
-    <a href='https://github.com/HickoryWinds/FriendFinder' target='blank'>GitHub Repo</a>
+    <a href='https://github.com/HickoryWinds/Friend-Finder' target='blank'>GitHub Repo</a>
   </div>
 <script>
 console.log(document.forms.length);
@@ -184,14 +184,7 @@ console.log(answerSummary);
 // for (j = 0; j < document.forms.length; j++){
 //   console.log(document.forms[j]);
 // }
-function makeAnswerArrayX() {
-  var AnswerArray = [];
-  var comparison = 0;
-  for (var i = 0; i < document.forms.length; i++){
-    AnswerArray.push(document.forms[i].value);
-  }
-  console.log(AnswerArray);
-}
+
 // create function to store input data when Done button pressed
 $('#add-button').on('click', function(event){
   event.preventDefault();
@@ -208,7 +201,7 @@ $('#add-button').on('click', function(event){
       // pull out answer from form
       // txt = question[i].value;
       //push to array
-      answerSummary.push(question[i]);
+      answerSummary.push(question[i].value);
       console.log(" answerSummary " + j + " " + answerSummary);
     }
   }
