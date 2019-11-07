@@ -7,9 +7,13 @@ module.exports = function(app){
     app.get('/survey', function(req, res){
         res.sendFile(path.join(__dirname + '/../public/survey.html'));
     })
+    // set image url for server
+    app.get('/images', function(req, res){
+        res.sendFile(path.join(__dirname + '/../images/'));
     //  set default url for server that app is deployed on
     app.use(function(req, res){
         res.sendFile(path.join(__dirname + '/../public/home.html'));
+    })
     })
     // console.log that export is working
     console.log('htmlRoutes exported');
