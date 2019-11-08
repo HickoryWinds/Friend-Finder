@@ -11,6 +11,10 @@ module.exports = function(app){
     app.get('/css', function(req, res){
         res.sendFile(path.join(__dirname + '/../css/style.css'));
     })
+    // set background image url
+    app.get('/image', function(req, res){
+        res.sendFile(path.join(__dirname + '/../images/people.jpg'));
+    })
     //  set default url for server that app is deployed on
     app.use(function(req, res){
         res.sendFile(path.join(__dirname + '/../public/home.html'));

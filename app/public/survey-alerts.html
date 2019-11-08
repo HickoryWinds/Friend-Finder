@@ -47,9 +47,9 @@
         <hr>
         <h3><strong>About You</strong></h3>
           <h4>Name (required)</h4>
-            <input type='text' id='name' class='form-control'>
+            <input type='text' id='name'  name='fname' class='form-control' required>
           <h4>Photo Image Link (required)</h4>
-          <input type='url' id='photo' class='form-control'>
+          <input type='url' id='photo' class='form-control' required>
           <hr>
         <!-- all questions are in separate forms so looping can be used to collect answers -->
         <h3><strong>Question 1</strong></h3>
@@ -194,12 +194,6 @@ var bestPhoto = '';
 // create function to store input data when Done button pressed
 $('#add-button').on('click', function(event){
   event.preventDefault();
-  // check all fields for validity and find friend if all fields complete
-  checkAndCalc();
-});
-
-// check all fields for validity and find friend if all fields complete
-function checkAndCalc(){
   // answerSummary stores all answers in an array
   // loop through all the questions
   answerSummary = [];
@@ -211,7 +205,6 @@ function checkAndCalc(){
       // pull out answer from form and push to array
       if (question[i].value === ''){
         alert('All questions need an answer!')
-        reDo();
       }
       answerSummary.push(question[i].value);
     }
@@ -224,7 +217,6 @@ function checkAndCalc(){
   newFriend['photo'] = $('#photo').val().trim();
   if (newFriend['photo'] === '' || newFriend['name'] === '') {
     alert('Name and Photo are a required fields!')
-    reDo();
     // break;
   }
   newFriend['scores'] = answerSummary;
@@ -232,7 +224,7 @@ function checkAndCalc(){
   friendsQuery();
   var currentUrl = window.location.origin;
   $.post(currentUrl + '/api/friends', newFriend, function(data){
-    alert('Friend found! Click OK');
+    alert('Now searching...');
     // clear form
     $('#name').val('');
     $('#photo').val('');
@@ -241,7 +233,7 @@ function checkAndCalc(){
     }
     showFriend(bestFriend, bestPhoto);
   });
-};
+});
 
 
 // get the data from friends.js
@@ -289,23 +281,17 @@ function showFriend(name, photo){
     modalImg.src = photo;
     captionText.innerHTML = name;
     // get <span> element that closes modal
-    var span = document.getElementsByClassName("close")[0];
-    
-    // when user clicks on <span> (x), close modal
-      span.onclick = function() { 
-        modal.style.display = "none";
+      var span = document.getElementsByClassName("close")[0];
+      
+      // when user clicks on <span> (x), close modal
+        span.onclick = function() { 
+          modal.style.display = "none";
+        }
+        // reset values for next friend search
+        lowNumber = 50;
+        bestFriend = '';
+        bestPhoto = '';
       }
-      // reset values for next friend search
-      lowNumber = 50;
-      bestFriend = '';
-      bestPhoto = '';
-}
-
-// instructs user to start again
-function reDo(){
-  alert('Please start the survey again.');
-  break;
-}
       
 </script>
 

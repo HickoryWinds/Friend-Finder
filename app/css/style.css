@@ -1,5 +1,8 @@
 /* font style for body */
-body {font-family: Arial, Helvetica, sans-serif;}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(/image);
+}
 
 /* caption for modal image*/
 #caption {
@@ -11,19 +14,20 @@ body {font-family: Arial, Helvetica, sans-serif;}
   text-align: center;
   color: #ccc;
   padding: 10px 0;
-  height: 150px;
+  height: 100px;
 }
 /* background for modal image */
 .modal {
   display: none; /* hidden */
   position: fixed;
   z-index: 1; /* put modal on top */
-  padding-top: 10px;
+  padding-top: 50px;
   /* left: 0;
   top: 0; */
-  width: 50%; /* half width */
-  height: 100%; /* full height */
-  overflow: auto; /* scroll if needed */
+  width: 33%; /* half width */
+  height: 60%; /* full height */
+  /* scroll if needed */
+  overflow: auto;
   background-color: rgba(0,0,0,0.9);
 }
 
@@ -31,12 +35,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .modal-content {
   margin: auto;
   display: block;
-  width: 80%;
+  width: 60%;
   max-width: 700px;
 }
 
 
-/* animation */
+/* modal animation */
 .modal-content, #caption {  
   -webkit-animation-name: zoom;
   -webkit-animation-duration: 0.6s;
@@ -78,4 +82,33 @@ body {font-family: Arial, Helvetica, sans-serif;}
   .modal-content {
     width: 100%;
   }
+}
+
+/* survey done button */
+#add-button {
+  background-color: aqua;
+}
+
+/* style card header and jumbotron */
+.card-header, .jumbotron{
+  background-color: coral;
+}
+
+/* style card body for survey */
+.card-body {
+  background-color: rgb(243, 123, 187);
+}
+
+/* style links */
+.links {
+  background-color: wheat;
+}
+
+a {
+  color: red;
+}
+
+/* style forms */
+form {
+  background-color: yellow;
 }
