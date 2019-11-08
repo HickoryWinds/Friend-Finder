@@ -8,8 +8,8 @@ module.exports = function(app){
         res.sendFile(path.join(__dirname + '/../public/survey.html'));
     })
     // set image url for server
-    app.get('/images', function(req, res){
-        res.sendFile(path.join(__dirname + '/../images/'));
+    app.get('/css', function(req, res){
+        res.sendFile(path.join(__dirname + '/../css/style.css'));
     })
     //  set default url for server that app is deployed on
     app.use(function(req, res){
