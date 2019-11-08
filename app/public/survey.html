@@ -282,7 +282,7 @@ var lowNumber = 50;
 var bestFriend = '';
 
 // test code
-var testArray = ["5", "5", "5", "5", "5", "5", "5", "5", "5", "5"]
+var testArray = ["5", "5", "5", "5", "5", "5", "5", "5", "5", "5"];
 console.log(answerSummary);
 
 // for (j = 0; j < document.forms.length; j++){
@@ -311,12 +311,12 @@ $('#add-button').on('click', function(event){
   }
   // create newFriend profile
   var newFriend = 
-     {
-      name: $('#name').val().trim(),
-      photo: $('#photo').val().trim(),
-      scores: answerSummary
-     }
-     JSON.stringify(newFriend);
+  {
+  };
+  newFriend['name'] = $('#name').val().trim();
+  newFriend['photo'] = $('#photo').val().trim();
+  newFriend['scores'] = answerSummary;
+    //  JSON.stringify(newFriend);
   console.log('@@@@@@@@@@@')
   console.log(newFriend);
   friendsQuery();
@@ -347,7 +347,7 @@ function friendsQuery(){
     // console.log(friendsData[0].scores);
     //loop through all friendsData
     // for (var j = 0; j < friendsData.length; j++){
-    for (var j = 0; j < 3; j++){
+    for (var j = 0; j < friendsData.length; j++){
     // compareFriends(answerSummary, friendsData[j].scores, j);
     compareFriends(answerSummary, friendsData[j], j);
     }
@@ -364,7 +364,7 @@ function compareFriends(answerSummary, friend, counter){
   var comparison = 0;
   for ( var i = 0; i < 10; i++){
     // var diff = Math.abs(parseInt(answerSummary[i]) - parseInt(friend[i]));
-    var diff = Math.abs(parseInt(answerSummary[i]) - parseInt(friend.scores[i]));
+    var diff = Math.abs(parseInt(answerSummary[i]) - parseInt(friend['scores[]'][i]));
     console.log(diff);
     comparison += diff
   }
