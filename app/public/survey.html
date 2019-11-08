@@ -4,116 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <title>Friend Finder Survey</title>
-  <!-- Latest compiled and minified CSS & JS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- link to bootstrap css, popper and js -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- link to font awesome for graphics -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- link to stylesheet -->
   <link rel="stylesheet" href="/css">
+  <!-- link to jquery -->
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <!-- <style>
-  body {font-family: Arial, Helvetica, sans-serif;}
-
-#myImg {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#myImg:hover {opacity: 0.7;}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 10px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 50%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
-
-/* Modal Content (image) */
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-}
-
-/* Caption of Modal Image */
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
-}
-
-/* Add Animation */
-.modal-content, #caption {  
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)} 
-  to {-webkit-transform:scale(1)}
-}
-
-@keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
-}
-
-/* The Close Button */
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
-  }
-}
-  </style> -->
-
 </head>
 
 <body>
   <!-- container for survey -->
   <div class='container'>
-
-    <!-- moda?l stuff -->
-    <!-- <h2>Image Modal</h2>
-<p>In this example, we use CSS to create a modal (dialog box) that is hidden by default.</p>
-<p>We use JavaScript to trigger the modal and to display the current image inside the modal
-   when it is clicked on. Also note that we use the value from the image's "alt" attribute as an image caption text inside the modal.</p> -->
-
-<!-- <img id="myImg" src="https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage//N3313/large/7060025_cco_30903_pri_larg.jpg" alt="Where is It?" style="width:100%;max-width:300px">
-<p>More text</p> -->
+   
 <!-- The Modal -->
 <div id="myModal" class="modal">
   <span class="close">&times;</span>
@@ -133,6 +41,7 @@
           <h1>Take the Survey</h1>
         </div>
       </div>
+      <!-- card for entering answers to survey -->
       <div class='card-body'>
         <h2>Survey Questions</h2>
         <hr>
@@ -142,7 +51,7 @@
           <h4>Photo Image Link (required)</h4>
           <input type='url' id='photo' class='form-control' required>
           <hr>
-       
+        <!-- all questions are in separate forms so looping can be used to collect answers -->
         <h3><strong>Question 1</strong></h3>
           <h4>Your mind is always buzzing.</h4>
           <form>
@@ -276,19 +185,10 @@
     <a href='https://github.com/HickoryWinds/Friend-Finder' target='blank'>GitHub Repo</a>
   </div>
 <script>
-console.log(document.forms.length);
 // declare global variables for use in multiple modules
 var answerSummary = [];
 var lowNumber = 50;
 var bestFriend = '';
-
-// test code
-var testArray = ["5", "5", "5", "5", "5", "5", "5", "5", "5", "5"];
-console.log(answerSummary);
-
-// for (j = 0; j < document.forms.length; j++){
-//   console.log(document.forms[j]);
-// }
 
 // create function to store input data when Done button pressed
 $('#add-button').on('click', function(event){
@@ -298,33 +198,24 @@ $('#add-button').on('click', function(event){
   answerSummary = [];
   for (var j = 0; j < document.forms.length; j++) {
     var question = document.forms[j];
-    console.log(question);
-    // var txt = "";
     var i;
     // add each response to answerSummary
     for (i = 0; i < question.length; i++) {
-      // pull out answer from form
-      // txt = question[i].value;
-      //push to array
+      // pull out answer from form and push to array
       answerSummary.push(question[i].value);
-      console.log(" answerSummary " + j + " " + answerSummary);
     }
   }
-  // create newFriend profile
+  // create newFriend profile using bracket notation
   var newFriend = 
   {
   };
   newFriend['name'] = $('#name').val().trim();
   newFriend['photo'] = $('#photo').val().trim();
   newFriend['scores'] = answerSummary;
-    //  JSON.stringify(newFriend);
-  console.log('@@@@@@@@@@@')
-  console.log(newFriend);
-  friendsQuery();
   // post newFriend to friends list on server
+  friendsQuery();
   var currentUrl = window.location.origin;
   $.post(currentUrl + '/api/friends', newFriend, function(data){
-    // console.log(data[0]);
     alert('Now searching...');
     // clear form
     $('#name').val('');
@@ -341,11 +232,6 @@ function friendsQuery(){
   // make ajax call to display data from friends.js
   $.ajax({url: currentUrl + '/api/friends', method: 'GET'})
   .done(function(friendsData){
-    console.log('------------')
-    console.log(friendsData.length);
-    // console.log(friendsData[0].name);
-    // console.log(friendsData[0].photo);
-    // console.log(friendsData[0].scores);
     //loop through all friendsData
     // for (var j = 0; j < friendsData.length; j++){
     for (var j = 0; j < friendsData.length; j++){
@@ -359,49 +245,22 @@ function friendsQuery(){
 // function compare Friends takes absolute value of difference 
 //between corresponding elements of answerSummary and friend
 function compareFriends(answerSummary, friend, counter){
-  console.log('*****************')
-  // console.log(answerSummary[0]);
-  // console.log(friend[0]);
   var comparison = 0;
   for ( var i = 0; i < 10; i++){
     // var diff = Math.abs(parseInt(answerSummary[i]) - parseInt(friend[i]));
     var diff = Math.abs(parseInt(answerSummary[i]) - parseInt(friend['scores[]'][i]));
-    console.log(diff);
     comparison += diff
   }
-  console.log('%%%%%%%%%%%%')
-  console.log(comparison);
   if (comparison < lowNumber) {
     lowNumber = comparison;
     index = counter;
     bestFriend = friend.name;
     bestPhoto = friend.photo
   }
-  console.log('&&&&&&&&&&');
-  console.log(lowNumber);
-  console.log(index);
-  console.log(bestFriend);
-  console.log(bestPhoto);
 }
 
-// function showFriend(bff, bfphoto){
-//   console.log('^^^^^^^^');
-//   console.log(bff);
-//   console.log(bfphoto);
-//   lowNumber = 50;
-//   bestFriend = '';
-//   bestPhoto = '';
-//   showFriend();
-// }
-
-// modal stuff
+// display best match as modal
 function showFriend(name, photo){
-  console.log('^^^^^^^^');
-  console.log(name);
-  console.log(photo);
-  lowNumber = 50;
-  bestFriend = '';
-  bestPhoto = '';
   // Get the modal
   var modal = document.getElementById("myModal");
   
@@ -409,23 +268,21 @@ function showFriend(name, photo){
   var img = document.getElementById("myImg");
   var modalImg = document.getElementById("img01");
   var captionText = document.getElementById("caption");
-  // img.onclick = function(){
-  //   modal.style.display = "block";
-  //   modalImg.src = this.src;
-  //   captionText.innerHTML = this.alt;
-  // }
-  modal.style.display = "block";
-  modalImg.src = photo;
-  captionText.innerHTML = name;
-  console.log('here')
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-  
-  // When the user clicks on <span> (x), close the modal
-    span.onclick = function() { 
-      modal.style.display = "none";
-    }
-}
+    modal.style.display = "block";
+    modalImg.src = photo;
+    captionText.innerHTML = name;
+    // Get <span> element that closes modal
+      var span = document.getElementsByClassName("close")[0];
+      
+      // wgenuser clicks on <span> (x), close modal
+        span.onclick = function() { 
+          modal.style.display = "none";
+        }
+        // reset values for next friend search
+        lowNumber = 50;
+        bestFriend = '';
+        bestPhoto = '';
+      }
       
 </script>
 

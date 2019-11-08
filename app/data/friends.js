@@ -1,4 +1,5 @@
 // define initial friend for checking
+// use bracket notation for scores to correspond with friends that are added via survey
 var friendsArray = [
     {
         name: 'Bill Bow Baggins',

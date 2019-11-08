@@ -7,7 +7,7 @@ module.exports = function(app){
     app.get('/survey', function(req, res){
         res.sendFile(path.join(__dirname + '/../public/survey.html'));
     })
-    // set image url for server
+    // set css url
     app.get('/css', function(req, res){
         res.sendFile(path.join(__dirname + '/../css/style.css'));
     })
