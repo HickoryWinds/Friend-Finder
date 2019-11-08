@@ -189,6 +189,7 @@
 var answerSummary = [];
 var lowNumber = 50;
 var bestFriend = '';
+var bestPhoto = '';
 
 // create function to store input data when Done button pressed
 $('#add-button').on('click', function(event){
@@ -223,8 +224,11 @@ $('#add-button').on('click', function(event){
     for ( var k = 0; k < document.forms.length; k++){
       document.forms[k].reset();
     }
+    showFriend(bestFriend, bestPhoto);
   });
 });
+
+
 // get the data from friends.js
 function friendsQuery(){
   // set url to current path of server deployment
@@ -238,8 +242,7 @@ function friendsQuery(){
     // compareFriends(answerSummary, friendsData[j].scores, j);
     compareFriends(answerSummary, friendsData[j], j);
     }
-    showFriend(bestFriend, bestPhoto);
-  })
+  });
 }
 
 // function compare Friends takes absolute value of difference 
@@ -265,16 +268,15 @@ function showFriend(name, photo){
   var modal = document.getElementById("myModal");
   
   // Get the image and insert it inside the modal - use its "alt" text as a caption
-  var img = document.getElementById("myImg");
   var modalImg = document.getElementById("img01");
   var captionText = document.getElementById("caption");
     modal.style.display = "block";
     modalImg.src = photo;
     captionText.innerHTML = name;
-    // Get <span> element that closes modal
+    // get <span> element that closes modal
       var span = document.getElementsByClassName("close")[0];
       
-      // wgenuser clicks on <span> (x), close modal
+      // when user clicks on <span> (x), close modal
         span.onclick = function() { 
           modal.style.display = "none";
         }
