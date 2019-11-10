@@ -24,8 +24,8 @@ body {
   padding-top: 50px;
   /* left: 0;
   top: 0; */
-  width: 33%; /* half width */
-  height: 60%; /* full height */
+  width: 33%;
+  height: 60%;
   /* scroll if needed */
   overflow: auto;
   background-color: rgba(0,0,0,0.9);
@@ -37,25 +37,6 @@ body {
   display: block;
   width: 60%;
   max-width: 700px;
-}
-
-
-/* modal animation */
-.modal-content, #caption {  
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)} 
-  to {-webkit-transform:scale(1)}
-}
-
-@keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
 }
 
 /* close button */

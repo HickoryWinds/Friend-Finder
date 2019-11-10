@@ -212,6 +212,7 @@ function checkAndCalc(){
       if (question[i].value === ''){
         alert('All questions need an answer!')
         reDo();
+        return;
       }
       answerSummary.push(question[i].value);
     }
@@ -225,7 +226,7 @@ function checkAndCalc(){
   if (newFriend['photo'] === '' || newFriend['name'] === '') {
     alert('Name and Photo are a required fields!')
     reDo();
-    // break;
+    return;
   }
   newFriend['scores'] = answerSummary;
   // post newFriend to friends list on server
@@ -304,7 +305,6 @@ function showFriend(name, photo){
 // instructs user to start again
 function reDo(){
   alert('Please start the survey again.');
-  break;
 }
       
 </script>
