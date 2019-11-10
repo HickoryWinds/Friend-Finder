@@ -14,9 +14,13 @@ var PORT = process.env.PORT || 4000;
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+// set static path for images
+app.use('/images', express.static(__dirname + '/app/images'));
+
 // import routing js files for api and html
 require('./app/routing/apiRoutes')(app);
 require('./app/routing/htmlRoutes')(app);
+
 
 // start server listening on PORT
 app.listen(PORT, function(){

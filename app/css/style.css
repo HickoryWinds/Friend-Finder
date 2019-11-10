@@ -1,7 +1,7 @@
 /* font style for body */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url(/image);
+  background-image: url(/images/people.jpg);
 }
 
 /* caption for modal image*/
@@ -27,7 +27,7 @@ body {
   width: 33%;
   height: 60%;
   /* scroll if needed */
-  overflow: auto;
+  /* overflow: auto; */
   background-color: rgba(0,0,0,0.9);
 }
 
@@ -36,6 +36,7 @@ body {
   margin: auto;
   display: block;
   width: 60%;
+  height: 75%;
   max-width: 700px;
 }
 
